@@ -5,9 +5,13 @@ on_chroot << EOF
 rm -rf /opt/mission-mule
 mkdir -p /opt/mission-mule
 
-cd /opt/mission-mule && git clone -v https://github.com/missionmule/firefly-mule.git
 
-cd /opt/mission-mule/firefly-mule && pip3 install -r /opt/mission-mule/firefly-mule/requirements.txt
+mkdir -p /home/pi/.ssh
+touch /home/pi/.ssh/known_hosts
+
+cd /opt/mission-mule && git clone -v https://github.com/missionmule/data-mule.git
+
+cd /opt/mission-mule/data-mule && pip install -r /opt/mission-mule/data-mule/requirements.txt
 
 EOF
 
