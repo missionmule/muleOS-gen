@@ -1,5 +1,6 @@
-python3-pip
 python-pip
+python-dev
 libffi-dev
 libxml2-dev
 libxslt1-dev
+zlib1g-dev
