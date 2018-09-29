@@ -3,5 +3,5 @@ python-dev
 libffi-dev
 libssl-dev
 libxml2-dev
-libxslt1-dev
+libxslt-dev
 zlib1g-dev

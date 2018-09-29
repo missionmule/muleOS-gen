@@ -12,6 +12,7 @@
 
 on_chroot << EOF
 
+pip install future
 pip install lxml
 pip install paramiko
 pip install pymavlink

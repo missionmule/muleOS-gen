@@ -5,7 +5,6 @@ on_chroot << EOF
 rm -rf /opt/mission-mule
 mkdir -p /opt/mission-mule
 
-
 mkdir -p /home/pi/.ssh
 touch /home/pi/.ssh/known_hosts
 
@@ -23,3 +22,8 @@ systemctl enable mission-mule-avionics
 systemctl disable hciuart
 
 EOF
+
+cd /etc && git clone -v https://github.com/dronekit/dronekit-python.git
+cd /etc/dronekit-python
+sudo python setup.py build
+sudo python setup.py install
