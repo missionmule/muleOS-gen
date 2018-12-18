@@ -32,6 +32,13 @@ install -m 644 -v files/72-wlan-geo-dependent.rules "${ROOTFS_DIR}/etc/udev/rule
 
 echo "Wireless access point configuration complete"
 
+echo "Installing unique UUID script"
+install -m 755 -v files/unique_ssid.py "${ROOTFS_DIR}/opt/"
+
+# Enable Apache2 access to /srv/ directory where sensor data and logs are kept
+echo "Installing apache2.conf..."
+install -m 644 -v files/apache2.conf  "${ROOTFS_DIR}/etc/apache2"
+
 on_chroot << EOF
 
 iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE

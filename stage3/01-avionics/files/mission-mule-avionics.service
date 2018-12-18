@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /opt/mission-mule/firefly-mule/avionics
+ExecStart=/usr/bin/python /opt/mission-mule/data-mule/avionics
 Restart=on-failure
 
 [Install]
