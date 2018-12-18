@@ -27,7 +27,7 @@ EOF
 
 on_chroot << EOF
 
-pip uninstall dronekit-pythin
+pip uninstall dronekit-python
 
 cd /etc && git clone -v https://github.com/dronekit/dronekit-python.git
 cd /etc/dronekit-python
