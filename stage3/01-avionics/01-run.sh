@@ -22,16 +22,3 @@ systemctl enable mission-mule-avionics
 systemctl disable hciuart
 
 EOF
-
-# Install latest dronekit version for PX4 support
-
-on_chroot << EOF
-
-pip uninstall dronekit-python
-
-cd /etc && git clone -v https://github.com/dronekit/dronekit-python.git
-cd /etc/dronekit-python
-sudo python setup.py build
-sudo python setup.py install
-
-EOF
