@@ -10,7 +10,7 @@ touch /home/pi/.ssh/known_hosts
 
 cd /opt/mission-mule && git clone -v https://github.com/missionmule/firefly-mule.git
 
-cd /opt/mission-mule/firefly-mule && pip install -r /opt/mission-mule/firefly-mule/requirements.txt
+cd /opt/mission-mule/firefly-mule && pip3 install -r /opt/mission-mule/firefly-mule/requirements.txt
 
 EOF
 

@@ -18,7 +18,7 @@ install -m 755 files/apache2.conf   "${ROOTFS_DIR}/etc/apache2/apache2.conf"
 
 on_chroot << EOF
 
-chown pi:pi /srv/
+chown pi:pi -R /srv/
 chmod 755 /srv/
 
 EOF
