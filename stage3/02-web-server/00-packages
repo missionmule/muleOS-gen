@@ -1,4 +1,3 @@
-apache2
-php7.0
-php7.0-zip
-libapache2-mod-php
+nginx
+xsel
+sqlite3
