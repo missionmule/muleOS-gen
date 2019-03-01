@@ -39,5 +39,6 @@ on_chroot << EOF
 
 systemctl enable mission-mule-client
 systemctl enable mission-mule-server
+systemctl enable nginx
 
 EOF
