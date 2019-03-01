@@ -7,3 +7,4 @@ libxslt-dev
 zlib1g-dev
 curl
 software-properties-common
+tee
