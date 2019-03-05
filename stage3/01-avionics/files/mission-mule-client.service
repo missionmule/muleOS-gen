@@ -1,5 +1,5 @@
 [Unit]
-Description=Data mule server
+Description=Data mule web client
 After=multi-user.target
 
 [Service]
