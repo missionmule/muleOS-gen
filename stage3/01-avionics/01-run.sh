@@ -1,5 +1,11 @@
 #!/bin/bash -e
 
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
+
+apt-get remove nodejs -y && apt-get update && apt-get install nodejs -y
+
+npm install -g react-scripts serve
+
 on_chroot << EOF
 
 rm -rf /opt/mission-mule
@@ -14,9 +20,9 @@ cd /opt/mission-mule/firefly-mule && pip3 install -r /opt/mission-mule/firefly-m
 
 cd /opt/mission-mule && git clone -v https://github.com/missionmule/data-mule-server.git
 
-cd /opt/mission-mule/data-mule-server && /usr/bin/npm setup
+cd /opt/mission-mule/data-mule-server && npm setup
 
-cd /opt/mission-mule/data-mule-server/client && /usr/bin/npm build
+cd /opt/mission-mule/data-mule-server/client && npm build
 
 rm -rf /etc/nginx/sites-available/default
 
@@ -25,7 +31,6 @@ chown pi:pi -R /srv/
 chmod 755 /srv/
 
 EOF
-
 
 install -m 644 files/mission-mule-avionics.service   "${ROOTFS_DIR}/lib/systemd/system/"
 install -m 644 files/mission-mule-client.service   "${ROOTFS_DIR}/lib/systemd/system/"
