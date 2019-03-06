@@ -14,9 +14,9 @@ cd /opt/mission-mule/firefly-mule && pip3 install -r /opt/mission-mule/firefly-m
 
 cd /opt/mission-mule && git clone -v https://github.com/missionmule/data-mule-server.git
 
-cd /opt/mission-mule/data-mule-server && yarn setup
+cd /opt/mission-mule/data-mule-server && /usr/bin/npm setup
 
-cd /opt/mission-mule/data-mule-server/client && yarn build
+cd /opt/mission-mule/data-mule-server/client && /usr/bin/npm build
 
 rm -rf /etc/nginx/sites-available/default
 
@@ -25,6 +25,7 @@ chown pi:pi -R /srv/
 chmod 755 /srv/
 
 EOF
+
 
 install -m 644 files/mission-mule-avionics.service   "${ROOTFS_DIR}/lib/systemd/system/"
 install -m 644 files/mission-mule-client.service   "${ROOTFS_DIR}/lib/systemd/system/"

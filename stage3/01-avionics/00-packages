@@ -2,3 +2,5 @@ git
 python-setuptools
 xsel
 sqlite3
+nodejs
+yarn

@@ -17,5 +17,4 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.lis
 
 apt-get remove cmdtest && apt-get update && apt-get install yarn nodejs -y
 
-yarn add global react-scripts
-yarn add global serve
+/usr/bin/npm install -g react-scripts serve
