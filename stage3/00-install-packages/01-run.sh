@@ -11,7 +11,7 @@ pip3 install geopy
 EOF
 
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
-apt-get remove nodejs && apt-get update && apt-get install nodejs -y
+apt-get remove nodejs npm && apt-get update && apt-get install nodejs -y
 
 /usr/bin/npm cache clean --force
 
