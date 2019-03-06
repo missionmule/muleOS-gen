@@ -11,10 +11,8 @@ pip3 install geopy
 EOF
 
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
+apt-get remove nodejs && apt-get update && apt-get install nodejs -y
 
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-
-apt-get remove cmdtest && apt-get update && apt-get install yarn nodejs -y
+/usr/bin/npm cache clean --force
 
 /usr/bin/npm install -g react-scripts serve
