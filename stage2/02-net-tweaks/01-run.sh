@@ -24,24 +24,17 @@ install -m 755 -v files/hostapd "${ROOTFS_DIR}/etc/default/"
 echo "Installing sysctl.conf"
 install -m 644 -v files/sysctl.conf "${ROOTFS_DIR}/etc/"
 
-echo "Installing unique UUID script"
-install -m 755 -v files/unique_ssid.py "${ROOTFS_DIR}/opt/"
-
 echo "Installing 72-wlan-geo-dependent.rules"
 install -m 644 -v files/72-wlan-geo-dependent.rules "${ROOTFS_DIR}/etc/udev/rules.d/"
 
 echo "Wireless access point configuration complete"
 
-echo "Installing unique UUID script"
-install -m 755 -v files/unique_ssid.py "${ROOTFS_DIR}/opt/"
-
-# Enable Apache2 access to /srv/ directory where sensor data and logs are kept
-echo "Installing apache2.conf..."
-install -m 644 -v files/apache2.conf  "${ROOTFS_DIR}/etc/apache2"
-
 on_chroot << EOF
 
 iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE
 sh -c "iptables-save > /etc/iptables.ipv4.nat"
+
+systemctl enable hostapd
+systemctl enable dnsmasq
 
 EOF
