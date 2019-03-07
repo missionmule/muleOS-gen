@@ -4,7 +4,8 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/node /opt/mission-mule/data-mule-server/server.js
+Environment="NODE_ENV=production"
+ExecStart=/usr/bin/export NODE_ENV=production && /usr/bin/node /opt/mission-mule/data-mule-server/server.js
 Restart=on-failure
 
 [Install]

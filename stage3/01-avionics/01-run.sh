@@ -35,5 +35,7 @@ systemctl disable hciuart
 systemctl enable mission-mule-client
 systemctl enable mission-mule-server
 systemctl enable nginx
+systemctl enable hostapd
+systemctl enable dnsmasq
 
 EOF
