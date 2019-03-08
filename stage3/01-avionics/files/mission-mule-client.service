@@ -4,7 +4,8 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/serve -s /opt/mission-mule/data-mule-server/client/build/ -l 3000
+Environment="NODE_ENV=production"
+ExecStart=/usr/local/share/.config/yarn/global/node_modules/serve/bin/serve.js -s /opt/mission-mule/data-mule-server/client/build/ -l 3000
 Restart=on-failure
 
 [Install]
