@@ -1,19 +1,19 @@
 #!/bin/bash -e
 
 # Fix unreliable hostapd service causing failed access point
-systemctl enable hostapd
+sudo systemctl enable hostapd
 
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo curl -sL https://deb.nodesource.com/setup_10.x | bash -
+sudo curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-apt-get remove cmdtest nodejs -y
-apt-get update
-apt-get install nodejs yarn -y
+sudo apt-get remove cmdtest nodejs -y
+sudo apt-get updatesudo apt-get update
+sudo apt-get install nodejs yarn -y
 
-yarn add global react-scripts serve
+sudo yarn add global react-scripts serve
 
 cd /opt/mission-mule/data-mule-server
-yarn setup
+sudo yarn setup
 cd client
-yarn build
+sudo yarn build
